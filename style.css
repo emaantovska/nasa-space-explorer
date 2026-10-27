@@ -1,0 +1,285 @@
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(11, 61, 145, 0.85);
+  backdrop-filter: blur(2px);
+}
+.modal-content {
+  background: #1b263b;
+  margin: 5% auto;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border: 2px solid #FC3D21;
+  border-radius: 12px;
+  max-width: 500px;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 8px 40px #000b;
+}
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #FC3D21;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.modal-body h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: #FC3D21;
+}
+.modal-body p {
+  margin-bottom: 1em;
+}
+
+/* Details button on card */
+.details-btn {
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  background: #FC3D21;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3em 0.8em;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 1px 4px #0002;
+  transition: background 0.2s, color 0.2s;
+}
+.details-btn:hover, .details-btn:focus {
+  background: #fff;
+  color: #FC3D21;
+  outline: 2px solid #FC3D21;
+}
+/* Global reset & box sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark space theme background and text */
+body {
+  background: linear-gradient(135deg, #0B3D91 0%, #1b263b 100%);
+  color: #fff;
+  font-family: 'Inter', 'Public Sans', 'Helvetica', 'Source Sans Pro', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Base page styles */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0 1rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logo-large {
+  height: 60px;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #222b44;
+  background: #fff;
+}
+
+.logo {
+  height: 40px;
+  margin-left: 0.5rem;
+}
+
+.site-header h1 {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  color: #FC3D21; /* NASA Orioles Orange */
+  margin: 0;
+  text-shadow: 0 2px 8px #0B3D91, 0 0 2px #fff;
+  font-family: 'Inter', 'Public Sans', 'Helvetica', 'Source Sans Pro', Arial, sans-serif;
+}
+
+/* Date‐picker & button row */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.filters input[type="date"] {
+  background: #0B3D91;
+  color: #fff;
+  border: 2px solid #FC3D21;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  box-shadow: 0 1px 4px #0002;
+}
+
+.filters input[type="date"]:focus {
+  outline: 2px solid #FC3D21;
+  background: #112e5c;
+  color: #fff;
+}
+
+.filters button {
+  background: #FC3D21;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  font-family: inherit;
+  box-shadow: 0 1px 4px #0002;
+  font-weight: bold;
+}
+
+.filters button:hover,
+.filters button:focus {
+  background: #fff;
+  color: #FC3D21;
+  border: 2px solid #FC3D21;
+  outline: 2px solid #FC3D21;
+}
+
+/* Gallery flex container */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Gallery items */
+.card {
+  background: #0B3D91;
+  border-radius: 14px;
+  box-shadow: 0 6px 32px #000a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  border: 2px solid #FC3D21;
+  position: relative;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 40px #000c;
+  border-color: #fff;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #0B3D91;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+.card:hover img,
+.card:focus-within img {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px #000b;
+}
+
+.card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 1px 4px #0B3D91, 0 0 2px #fff;
+  font-family: inherit;
+}
+
+.card-date {
+  font-size: 0.95rem;
+  color: #e0e6ed;
+  margin-top: auto;
+}
+
+/* Placeholder content */
+.placeholder {
+  text-align: center;
+  color: #fff;
+  margin: 3rem 0;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer {
+  text-align: center;
+  color: #fff;
+  padding: 1.5rem 0 0.5rem 0;
+  margin-top: auto;
+  font-size: 1rem;
+  border-top: 1px solid #FC3D21;
+  font-family: inherit;
+}
+
+/* Visually hidden class for accessibility */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .site-header h1 {
+    font-size: 1.3rem;
+  }
+  .logo-large {
+    height: 40px;
+  }
+  .logo {
+    height: 28px;
+  }
+  .filters {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .gallery {
+    gap: 1rem;
+  }
+}
